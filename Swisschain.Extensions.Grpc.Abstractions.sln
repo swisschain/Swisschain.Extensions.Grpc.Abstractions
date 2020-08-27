@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swisschain.Extensions.Grpc.Abstractions", "src\Swisschain.Sdk.Server\Swisschain.Extensions.Grpc.Abstractions.csproj", "{AECBCC7B-5EC6-4E12-9360-3745816EAB5E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{9B91E530-6F54-4F00-A79B-24CCCC07FD02}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swisschain.Extensions.Grpc.Abstractions.Test", "test\Swisschain.Sdk.Server.Test\Swisschain.Extensions.Grpc.Abstractions.Test.csproj", "{F962764C-9571-4D6A-9DA4-7A53957F786A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9069F65A-F79B-4156-84FF-43445ED69971}"
 	ProjectSection(SolutionItems) = preProject
@@ -16,26 +12,30 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.github\workflows\ValidateCommit.yml = .github\workflows\ValidateCommit.yml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swisschain.Extensions.Grpc.Abstractions", "src\Swisschain.Extensions.Grpc.Abstractions\Swisschain.Extensions.Grpc.Abstractions.csproj", "{E4EAA1B0-A855-4FBB-83BC-A61F7A3AAA00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swisschain.Extensions.Grpc.Abstractions.Test", "test\Swisschain.Extensions.Grpc.Abstractions\Swisschain.Extensions.Grpc.Abstractions.Test.csproj", "{0F55E6A0-4ADF-4EAF-83B1-94CB29C5BCBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AECBCC7B-5EC6-4E12-9360-3745816EAB5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AECBCC7B-5EC6-4E12-9360-3745816EAB5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AECBCC7B-5EC6-4E12-9360-3745816EAB5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AECBCC7B-5EC6-4E12-9360-3745816EAB5E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F962764C-9571-4D6A-9DA4-7A53957F786A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F962764C-9571-4D6A-9DA4-7A53957F786A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F962764C-9571-4D6A-9DA4-7A53957F786A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F962764C-9571-4D6A-9DA4-7A53957F786A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4EAA1B0-A855-4FBB-83BC-A61F7A3AAA00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4EAA1B0-A855-4FBB-83BC-A61F7A3AAA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4EAA1B0-A855-4FBB-83BC-A61F7A3AAA00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4EAA1B0-A855-4FBB-83BC-A61F7A3AAA00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F55E6A0-4ADF-4EAF-83B1-94CB29C5BCBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F55E6A0-4ADF-4EAF-83B1-94CB29C5BCBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F55E6A0-4ADF-4EAF-83B1-94CB29C5BCBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F55E6A0-4ADF-4EAF-83B1-94CB29C5BCBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{F962764C-9571-4D6A-9DA4-7A53957F786A} = {9B91E530-6F54-4F00-A79B-24CCCC07FD02}
+		{0F55E6A0-4ADF-4EAF-83B1-94CB29C5BCBB} = {9B91E530-6F54-4F00-A79B-24CCCC07FD02}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54F3B36D-AC92-43DD-B720-9DDF4D9941ED}
