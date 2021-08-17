@@ -17,24 +17,53 @@ namespace Swisschain.Extensions.Grpc.Abstractions.Test
         private static readonly int ResponseDelaySeconds = 3;
         
         [Fact]
-        public void CanReadResponseWhenDeadlineNotExceeded()
+        public async Task CanReadResponseWhenDeadlineNotExceeded()
         {
             var greeterClient = GetClient(TimeSpan.FromSeconds(ResponseDelaySeconds + 1));
             
-            var resp = greeterClient.SayHello(new()
+            var respSync = greeterClient.SayHello(new()
             {
                 Name = "WTF"
             });
             
-            resp.Message.ShouldBe("Hello WTF");
+            respSync.Message.ShouldBe("Hello WTF");
+            
+            var respAsync =await greeterClient.SayHelloAsync(new()
+            {
+                Name = "WTF"
+            });
+            
+            respAsync.Message.ShouldBe("Hello WTF");
+        }
+
+        [Fact]
+        public async Task ShouldFailIfDeadlineExceededOnServiceCallLevel()
+        {
+            var greeterClient = GetClient(TimeSpan.FromSeconds(ResponseDelaySeconds + 1));
+            
+            Should.Throw<RpcException>(() => greeterClient.SayHello(new()
+            {
+                Name = "WTF"
+            }, deadline: DateTime.UtcNow.AddSeconds(ResponseDelaySeconds -1)));
+
+            await Should.ThrowAsync<RpcException>(async () => await greeterClient.SayHelloAsync(new()
+            {
+                Name = "WTF"
+            }, deadline: DateTime.UtcNow.AddSeconds(ResponseDelaySeconds -1)));
+            
         }
         
         [Fact]
-        public void StopExecutionWhenDeadlineExceeded()
+        public async Task ShouldStopExecutionWhenDeadlineExceeded()
         {
             var greeterClient = GetClient(TimeSpan.FromSeconds(ResponseDelaySeconds - 1));
             
             Should.Throw<RpcException>(() => greeterClient.SayHello(new()
+            {
+                Name = "WTF"
+            }));
+
+            await Should.ThrowAsync<RpcException>(async () => await greeterClient.SayHelloAsync(new()
             {
                 Name = "WTF"
             }));
