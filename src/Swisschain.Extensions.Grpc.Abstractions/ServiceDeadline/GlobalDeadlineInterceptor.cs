@@ -6,6 +6,7 @@ using Grpc.Core.Interceptors;
 
 namespace Swisschain.Extensions.Grpc.Abstractions.ServiceDeadline
 {
+    //this class is mostly copy-pasted from https://github.com/grpc/grpc-dotnet/blob/master/src/Grpc.AspNetCore.Server.ClientFactory/ContextPropagationInterceptor.cs#L39 at  5c7cf6c commit
     internal class GlobalDeadlineInterceptor : Interceptor
     {
         private readonly GlobalDeadlineInterceptorOptions _options;
